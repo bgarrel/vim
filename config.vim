@@ -30,6 +30,16 @@ set autoindent
 set noshowmode
 set ruler
 
+"Historial de deshacer
 set undodir=~/.vim/undodir
 set undofile
+
+"Espacios en blanco quedan rojos
+if &t_Co > 2
+    highlight ExtraWhitespace ctermbg=1
+    match ExtraWhitespace /\s\+$/
+else
+    set listchars=trail:~
+    set list
+endif
 

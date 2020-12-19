@@ -1,6 +1,13 @@
 " Tecla Lider
 let mapleader=" "
 
+" Guardar
+nmap <Leader>w :w<CR>
+" Cerrar
+nmap <Leader>q :q<CR>
+" Guardar y Cerrar
+nmap <Leader>wq :wq<CR>
+
 "Buffers"
 nmap <leader>b :Buffers<CR>
 " Moverme al siguiente buffer
@@ -9,25 +16,15 @@ nmap <Leader>bn :bnext<CR>
 nmap <Leader>bp :bprevious<CR>
 "Cerrar buffer"
 nmap <Leader>bd :bd<CR>
+
 " Insertar color RGB
 nmap <Leader>rg :VCoolIns r<CR>
-
-
-" Guardar
-nmap <Leader>w :w<CR>
-" Cerrar
-nmap <Leader>q :q<CR>
-" Guardar y Cerrar
-nmap <Leader>wq :wq<CR>
 
 " Moverme entre split
 nmap <Leader>l :wincmd l<CR>
 nmap <Leader>h :wincmd h<CR>
 nmap <Leader>j :wincmd j<CR>
 nmap <Leader>k :wincmd k<CR>
-
-" Explorador de Vim
-nmap <Leader>pv :wincmd v<bar> :Ex <bar> :vertical resize 30<CR>
 
 " Comentar y descomentar en HTML
 " Insertar comentario
@@ -49,9 +46,7 @@ nmap <Leader>0 <ESC>VG=
 
 " Split vertical
 nmap <Leader>vs :vertical split<CR>
-" Split Horizontal
-" nmap <Leader>hs :split<CR>
-" Redimensionar el split
+" Redimensionar split
 nmap <Leader>+ :vertical resize +5<CR>
 nmap <Leader>- :vertical resize -5<CR>
 
@@ -64,25 +59,25 @@ inoremap " ""<ESC><ESC>i
 inoremap ' ''<ESC><ESC>i
 inoremap ¿ ¿?<ESC><ESC>i
 
+"Flechas
 inoremap <C-l> <Right>
 inoremap <C-k> <Up>
 inoremap <C-j> <Down>
 inoremap <C-h> <Left>
 
+"Saltos de 5 lineas
 nmap <C-l> 5l
 nmap <C-k> 5k
 nmap <C-j> 5j
 nmap <C-h> 5h
 
-
 " Diccionario y correcion
 nmap <Leader>dc :setlocal spell! spelllang=es<CR>
 nmap <Leader>z z=
 
-
-  
 " Easymotion
 nmap <Leader>s <Plug>(easymotion-s2)
+
 " NERDTree
 nmap <Leader>nt :NERDTreeFind<CR>
 
@@ -92,22 +87,3 @@ nmap <Leader>fl :Files<CR>
 nmap <Leader>g :Rg<CR>
 nmap <Leader>m :Marks<CR>
 nmap <Leader>i :BLines<CR>
-
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
-
-
-" Customize fzf colors to match your color scheme
-let g:fzf_colors =
-\ { 'fg':      ['fg', 'Normal'],
-  \ 'bg':      ['bg', 'Normal'],
-  \ 'hl':      ['fg', 'Comment'],
-  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
-  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
-  \ 'hl+':     ['fg', 'Statement'],
-  \ 'info':    ['fg', 'PreProc'],
-  \ 'border':  ['fg', 'Ignore'],
-  \ 'prompt':  ['fg', 'Conditional'],
-  \ 'pointer': ['fg', 'Exception'],
-  \ 'marker':  ['fg', 'Keyword'],
-  \ 'spinner': ['fg', 'Label'],
-  \ 'header':  ['fg', 'Comment'] }

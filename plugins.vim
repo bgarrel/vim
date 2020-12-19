@@ -1,7 +1,9 @@
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
+
 " Temas
 Plugin 'morhetz/gruvbox'
 Plugin 'vim-airline/vim-airline'
@@ -9,23 +11,31 @@ Plugin 'vim-airline/vim-airline-themes'
 
 " Autocompletado
 Plugin 'neoclide/coc.nvim', {'branch': 'master', 'do': 'yarn install --frozen-lockfile'}
+
 " Navegacion rapida
 Plugin 'easymotion/vim-easymotion'
+
 " Explorador de archivos
 Plugin 'scrooloose/nerdtree'
+
 "Iconos for nerdtree
 Plugin 'ryanoasis/vim-devicons'
+
 " Lineas de identacion
 Plugin 'Yggdroot/indentLine'
+
 " Colores RGB
 Plugin 'kabbamine/vcoolor.vim'
+
 " HTML Fast
 Plugin 'mattn/emmet-vim'
+
 "FZF file serching"
 Plugin 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
 Plugin 'airblade/vim-rooter'
 Plugin 'lilydjwg/colorizer'
+
 call vundle#end()
 
 colorscheme gruvbox
@@ -60,13 +70,22 @@ let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 
-"Espacios en blanco quedan rojos
-if &t_Co > 2
-    highlight ExtraWhitespace ctermbg=1
-    match ExtraWhitespace /\s\+$/
-else
-    set listchars=trail:~
-    set list
-endif
-
 let g:colorizer_maxlines=100
+
+let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
+
+" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
